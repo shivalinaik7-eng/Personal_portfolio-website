@@ -1,0 +1,445 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: #f5f7ff;
+  background: #080a12;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at top left,
+      #202a55 0,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      #3b1d4f 0,
+      transparent 30%
+    ),
+    #080a12;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      120deg,
+      rgba(110, 90, 255, 0.08),
+      transparent 40%,
+      rgba(255, 80, 180, 0.06)
+    );
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 7%;
+
+  background: rgba(8, 10, 18, 0.78);
+  backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+.brand {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.brand span,
+h1 span,
+h2 span {
+  color: #a78bfa;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.links a {
+  color: #c8cbe0;
+  transition: 0.2s;
+}
+
+.links a:hover {
+  color: #ffffff;
+}
+
+.nav-button {
+  border: 0;
+  background: transparent;
+  color: #c8cbe0;
+  cursor: pointer;
+}
+
+main {
+  min-height: calc(100vh - 130px);
+}
+
+.page {
+  width: min(1120px, 90%);
+  margin: 0 auto;
+  padding: 90px 0;
+}
+
+.narrow {
+  max-width: 650px;
+}
+
+.hero {
+  min-height: 75vh;
+
+  display: flex;
+  align-items: center;
+}
+
+.hero h1 {
+  max-width: 850px;
+  margin: 10px 0;
+
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 0.98;
+}
+
+.hero-text {
+  max-width: 700px;
+  color: #b8bbcf;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.eyebrow {
+  color: #a78bfa;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.section-heading {
+  margin-bottom: 45px;
+}
+
+.section-heading h2 {
+  margin: 8px 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.actions,
+.form-actions,
+.project-links,
+.item-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.actions {
+  margin-top: 30px;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 45px;
+  padding: 0 20px;
+
+  border-radius: 12px;
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.primary-button {
+  color: #ffffff;
+  background: #7c5cff;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.secondary-button {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.secondary-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  padding: 28px;
+
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 20px 60px
+    rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(18px);
+}
+
+.about-card {
+  margin-bottom: 25px;
+}
+
+.about-card p {
+  color: #c2c5d8;
+  line-height: 1.8;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.three {
+  grid-template-columns:
+    repeat(3, 1fr);
+}
+
+.glass-card h3 {
+  margin-top: 0;
+}
+
+.glass-card p {
+  color: #b8bbcf;
+  line-height: 1.7;
+}
+
+.search-input,
+.form-card input,
+.form-card textarea {
+  width: 100%;
+
+  margin-bottom: 15px;
+  padding: 14px 16px;
+
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 12px;
+  outline: none;
+}
+
+.search-input {
+  margin-bottom: 25px;
+}
+
+.search-input:focus,
+.form-card input:focus,
+.form-card textarea:focus {
+  border-color: #a78bfa;
+}
+
+.form-card textarea {
+  resize: vertical;
+}
+
+.project-card {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card small {
+  color: #aeb2c6;
+  line-height: 1.6;
+}
+
+.tag {
+  width: fit-content;
+
+  padding: 6px 10px;
+  margin-bottom: 15px;
+
+  color: #d8d0ff;
+  background: rgba(124, 92, 255, 0.15);
+
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.project-links {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.project-links a {
+  color: #a78bfa;
+  font-weight: 700;
+}
+
+.status {
+  color: #b8bbcf;
+  margin-top: 15px;
+}
+
+.error {
+  color: #ff8f9f;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(320px, 0.9fr)
+    minmax(350px, 1.1fr);
+
+  gap: 20px;
+}
+
+.admin-list,
+.message-list {
+  display: grid;
+  gap: 12px;
+}
+
+.admin-item,
+.message-item {
+  padding: 17px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  background: rgba(255, 255, 255, 0.035);
+
+  border-radius: 14px;
+}
+
+.admin-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+}
+
+.admin-item h4,
+.message-item h4 {
+  margin: 0 0 6px;
+}
+
+.admin-item small {
+  color: #aeb2c6;
+}
+
+.item-actions button {
+  padding: 8px 12px;
+
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.item-actions .danger {
+  color: #ff9eaa;
+}
+
+.messages-card {
+  margin-top: 20px;
+}
+
+.message-item p {
+  margin: 8px 0;
+  color: #b8bbcf;
+}
+
+footer {
+  padding: 25px;
+  text-align: center;
+  color: #888da5;
+  border-top: 1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 800px) {
+  nav {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .links {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .three,
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero h1 {
+    font-size: 3.2rem;
+  }
+
+  .glass-card {
+    padding: 20px;
+  }
+
+  .admin-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
